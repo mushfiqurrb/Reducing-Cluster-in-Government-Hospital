@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>SRS</title>
+</head>
+<body>
+	<header>
+		<h1>Software Requirements Specification</h1>
+    <p>for</p>
+    <h1>Reducing cluster in Government Hospitals</h1>
+	</header>
+
+	<div id="navbar">
+  	<button class= "topbtn" onclick="printDiv();"><i class="fa fa-fw fa-print"></i>Print Document</button>
+	</div>
+
+	<div class = "all">
+		<div id ="sidebar">
+      <div id = "fixed">
+   	 	<h2>Table of Contents</h2>
+			<input type="text" id="searchbar" onkeyup="searchBtn()" placeholder="Search...">
+   		<ul id="contents">
+      	<li><a href="#L1"><strong>Introduction</strong></a></li>
+      	<li><a href="#L1.1">Purpose</a></li>
+    		<li><a href="#L1.2">Document Conventions</a></li>
+  			<li><a href="#L1.3">Intended Audience and Reading Suggestions</a></li>
+      	<li><a href="#L1.4">Product Scope</a></li>
+      	<li><a href="#L1.5">References</a></li>
+        <br>
+        <li><a href="#L2"><strong>Overall Description</strong></a></li>
+        <li><a href="#L2.1">Product Perspective</a></li>
+        <li><a href="#L2.2">Product Functions</a></li>
+        <li><a href="#L2.3">User Classes and Characteristics</a></li>
+        <li><a href="#L2.4">Operating Environment</a></li>
+        <li><a href="#L2.5">Design and Implementation Constraints</a></li>
+        <li><a href="#L2.6">User Documentation</a></li>
+        <li><a href="#L2.7">Assumptions and Dependencies</a></li>
+        <br>
+        <li><a href="#L3"><strong>External Interface Requirements</strong></a></li>
+        <li><a href="#L3.1">User Interfaces</a></li>
+        <li><a href="#L3.2">Hardware Interfaces</a></li>
+        <li><a href="#L3.3">Software Interfaces</a></li>
+        <li><a href="#L3.4">Communications Interfaces</a></li>
+        <br>
+        <li><a href="#L4"><strong>System Features</strong></a></li>
+        <li><a href="#L4.1">Log In</a></li>
+        <li><a href="#L4.2">Check Doctor Schedules</a></li>
+        <li><a href="#L4.3">Make an Appointment</a></li>
+        <li><a href="#L4.4">Check Status</a></li>
+        <li><a href="#L4.5">Cancel Appointment</a></li>
+        <li><a href="#L4.6">View Prescription</a></li>
+        <li><a href="#L4.7">Send Prescription</a></li>
+        <li><a href="#L4.8">Confirm Booking</a></li>
+        <li><a href="#L4.9">Change Booking</a></li>
+        <br>
+        <li><a href="#5"><strong>Other Nonfunctional Requirements</strong></a></li>
+        <li><a href="#L5.1">Performance Requirements</a></li>
+        <li><a href="#L5.2">Safety Requirements</a></li>
+        <li><a href="#L5.3">Security Requirements</a></li>
+        <li><a href="#L5.4">Software Quality Attributes</a></li>
+        <li><a href="#L5.5">Business Rules</a></li>
+        <br>
+        <li><a href="#L6"><strong>Other Requirements</strong></a></li>
+    	</ul>
+      </div>
+ 		</div>
+
+    <div id = "print" class="main">
+    <section>
+      <h2 id = "L1" class="title">1. Introduction</h2>
+      <h3 id = "L1.1" class="subtitle">1.1  Purpose</h3>
+      <p>The purpose of this product is to reduce cluster from government hospitals by allowing users to book their serials from home. This is a preliminary version of this product. The SRS will describe how the application will achieve this goal, brief discussion on how the system will work and detailed description about the product’s functionality.</p>
+      <h3 id = "L1.2" class="subtitle">1.2  Document Conventions</h3>
+      <p>This SRS follows the IEEE standards for writing Software Requirements Specification. According to that conventions all texts are written in Times New Roman fonts and all heading are written in Bold formate.</p>
+      <h3 id = "L1.3" class="subtitle">1.3  Intended Audience and Reading Suggestions</h3>
+      <p>This document is intended for project manager, designers, developers, testers and as well as the client. The overall description sections contains brief discussion of the product for the project manager and the client to give them some idea on how it will work. The rest of the document contains details on each and every functionality of the product which will help the designers to create necessary models and the developers to start building the application. The later parts will also help the testers to determine whether the requirements of this products are met or not.</p>
+      <h3 id = "L1.4" class="subtitle">1.4  Product Scope</h3>
+      <p>For this stage, the main focus is to build a system which will let the patient book serials for doctor’s appointment, check their appointment status, search and view necessary information. Doctors will also be able to use is this app to check appointment schedules and give feedbacks to patients. Assistant can manage appointments and send medical report to patient through this app. As the product is aimed for the general people, the user interface will be very simple and user-friendly and in Bengali.</p>
+      <h3>1.5 References</h3>
+      <p> Not Applicable</p>
+
+      <h2 id = "L2" class="title">2. Overall Description</h2>
+      <h3 id = "L2.1" class="subtitle">2.1  Product Perspective</h3>
+      <p>The patients in government hospital has to stand in a long line to book an appointment with a doctor and even if they get a booking, the timing are never specified correctly. As a result they have to needlessly wait for an uncertain amount of time in the hospital which creates a big crowd. To resolve this issue we are designing this product which will let the users book their appointments without coming to the hospital.</p>
+      <h3 id = "L2.2" class="subtitle">2.2  Product Functions</h3>
+      <p>The major functions of the product are stated blow:</p>
+      <ul>
+        <li>User will be able to make an appointment of his desired doctor</li>
+        <li>User will be able to check their appointment status.</li>
+        <li>User will be able to view serial number, room number, timing of appointment and doctor’s details.</li>
+        <li>System will notify users on appointment confirmations and changes with necessary information.</li>
+        <li>Admins and doctors will be able to confirm/deny bookings and manage timing of appointments.</li>
+        <li>Doctors can give feedbacks (with medical report if any) to patients.</li>
+        <li>Admin will be able make changes to serials.</li>
+      </ul>
+      <h3 id = "L2.3" class="subtitle">2.3  User Classes and Characteristics</h3>
+      <ul>
+        <li><b>Book Appointment:</b>> Highly important. Used by Patient actor. Take input from Patients and asks for confirmation from admin before generating an appointment serial.</li>
+        <li><b>Serial Management:</b> Highly important. Updates and manages serials in database after new confirmation, cancelation or changes to any appointment.</li>
+        <li><b>Send Notification:</b> Important. Sends the user a notification for appointment confirmations and changes with necessary information.</li>
+        <li><b>View Request:</b> Less important. Displays information requested by a user.</li>
+        <li><b>Send Report:</b> Less important. Takes medical report as input from doctor and sends it to the specified Patient.</li>
+      </ul>
+      <h3 id = "L2.4" class="subtitle">2.4  Operating Environment</h3>
+      <p>The application will run on both Android and Windows. On Android the OS needs to be Android 5 or above. To run on Windows, the system requires a web browser such as Google Chrome, Microsoft Edge, Opera etc.</p>
+      <h3 id = "L2.5" class="subtitle">2.5 Design and Implementation Constraints</h3>
+      <ul>
+        <li>Corporate or regulatory policies: Personal Information of doctors and patients are essential for this app. Such information needs to be collected following to proper policies.</li>
+        <li>Language requirements: The user interface should come in both Bangla and English.</li>
+        <li>Specific Technologies: App needs a constant internet connections to keep all users updated.</li>
+        <li>Security Considerations: Encryption should be applied to ensure secured use.</li>
+        <li>Communications Protocols: HTTP. </li>
+        <li>Design conventions: Command and Query Responsibility Segregation.</li>
+        <li>Maintaining: Hospital administration will be in charge of maintaining.</li>
+      </ul>
+      <h3 id = "L2.6" class="subtitle">2.6  User Documentation</h3>
+      <p>A simple user manual will be provided with the product for the user to help them understand how to use this application.</p>
+      <h3 id = "L2.7" class="subtitle">2.7  Assumptions and Dependencies</h3>
+      <ul>
+        <li>Hospital authorities may decide to admit patients without a prior booking (may be in case of emergency) which may affect the serial of other patients shown by the app.</li>
+        <li>Doctors may take unaccounted break which may affect the timing provided by the app.</li>
+        <li>Manual booking will still be allowed. Such booking needs to be registered by hospital managements otherwise the system won’t be able to maintain or update the serials.</li>
+      </ul>
+
+      <h2 id = "L3" class="title">3. External Interface Requirements</h2>
+      <h3 id = "L3.1" class="subtitle">3.1  User Interfaces</h3>
+      <p>Will be provided with SDS.</p>
+      <h3 id = "L3.2" class="subtitle">3.2  Hardware Interfaces</h3>
+      <p>No hardware interfaces required other than a machine to run the software.</p>
+      <h3 id = "L3.3" class="subtitle">3.3  Software Interfaces</h3>
+      <ul>
+        <li>Operating systems: Android5 and above, Windows XP, 7, 8 & 10.</li>
+        <li>Platform: Android Application, Web Application.</li>
+        <li>Tools: Laravel 5.7, XAMPP, Java.</li>
+        <li>Libraries: TBD</li>
+        <li>Notification Message: Message that will update and alert the user about appointments.</li>
+
+      </ul>
+      <h3 id = "L3.4" class="subtitle">3.4  Communications Interfaces</h3>
+      <p>Email: An email account is required to register an account. Emails will be encrypted so that only parties involved in a appointment will be able to see each other’s email ids.</p>
+      <p>Web Browser: Requires a web browser to run on Windows.</p>
+      <p>Protocols: HTTP.</p>
+
+      <h2 id = "L4" class="title">4. System Features Requirements</h2>
+      <h3 id = "L4.1" class="subtitle">4.1  Log In</h3>
+      <p><strong>4.1.1  Description and Priority</strong></p>
+      <p>Name: Log In.</p>
+      <p>Type: Secondary.</p>
+      <p>Actor: Patient, Doctor, Admin</p>
+      <p>Priority: Medium</p>
+      <p>Purpose: Allows a user to log in to his account</p>
+      <p>Overview: User enters his username and id to log in to his/her account</p>
+      <p>Cross reference: N/A</p>
+      <p><strong>4.1.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. User enters username & password.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>2. System verifies credentials and redirects the user to his account.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-2: Credentials not matched. System displays “Wrong id/password” error message</p>
+      <p>Line-2: Email is not registered. System Asks the user to register first</p>
+      <p><strong>4.1.3  Functional Requirements</strong></p>
+      <p>N/A</p>
+      <br>
+      <h3 id = "L4.2" class="subtitle">4.2  Check Doctor Schedules</h3>
+      <p><strong>4.2.1  Description and Priority</strong></p>
+      <p>Name: Check Doctor Schedules.</p>
+      <p>Type: Secondary.</p>
+      <p>Actor: Patient.</p>
+      <p>Priority: Medium.</p>
+      <p>Purpose: Allows a patient to check the list of available doctors and their office hours.</p>
+      <p>Overview: User selects his desired department (i.e medicine, anatomy, oncology etc.). Systems returns the list of available doctors of that department. User then select a doctor to check his details and schedule.</p>
+      <p>Cross reference: Log In.</p>
+      <p><strong>4.2.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Log In.</p>
+        <p>2. User selects view doctors list from the menu.</p>
+        <p>4. User selects a department.</p>
+        <p>6. User selects a specific doctor’s profile.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System shows list of departments.</p>
+        <p>5. System displays list of available doctors.</p>
+        <p>7. System will show the doctor’s profile including his schedule.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-5: No doctors may be available. System requests the user to try again later.</p>
+      <p><strong>4.2.3  Functional Requirements</strong></p>
+      <p>N/A</p>
+      <br>
+      <h3 id = "L4.3" class="subtitle">4.3  Make an Appointment</h3>
+      <p><strong>4.3.1  Description and Priority</strong></p>
+      <p>Name: Make an Appointment.</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Patient.</p>
+      <p>Priority: High.</p>
+      <p>Purpose: Allows a patient to book an appointment.</p>
+      <p>Overview: This actions lets the user to book an appointment for a specific doctor. User first selects a desired department and then his desired doctor. System sends a request to that doctor’s assistant and notifies the user once the request is accepted/denied. </p>
+      <p>Cross reference: Check Doctor Schedules.</p>
+      <p><strong>4.3.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Check Doctor Schedules.</p>
+        <p>2. User selects a doctor and selects book appointment.</p>
+        <p>4. User confirms his action.</p>
+        <p>7. User will get a randomly generated number which will be used when they are going to buy the ticket.</p>
+        <p>8. User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System asks for confirmation.</p>
+        <p>5. System will display “Standby for Confirmation” message.</p>
+        <p>6. System will show the appointments details in the notification panel in profile after the confirmation.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-6: Booking may be denied. System will notify the user with a “booking was unsuccessful” message.</p>
+      <p><strong>4.3.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection. </p>
+      <p>REQ-2: Username and password. User must be connected to book an appointment. If not logged in, he first needs to enter his email/username and password.</p>
+      <br>
+      <h3 id = "L4.4" class="subtitle">4.4  Check Status</h3>
+      <p><strong>4.4.1  Description and Priority</strong></p>
+      <p>Name: Check Status.</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Patient.</p>
+      <p>Priority: Medium.</p>
+      <p>Purpose: Allows a patient to see the status of an appointment.</p>
+      <p>Overview: This action will let the user see the date and the exact time for the appointment.</p>
+      <p>Cross reference: Log In.</p>
+      <p><strong>4.4.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Log In.</p>
+        <p>2. User selects “view appointments” from menu.</p>
+        <p>4. User selects his desired appointment.</p>
+        <p>6. User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System displays list of appointments.</p>
+        <p>5. System shows details about that appointment in real time.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-3: No appointments made. System displays “No appointments made” message.</p>
+      <p><strong>4.4.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection. </p>
+      <br>
+      <h3 id = "L4.5" class="subtitle">4.5  Cancel Appointment</h3>
+      <p><strong>4.5.1  Description and Priority</strong></p>
+      <p>Name: Cancel Appointment</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Patient.</p>
+      <p>Priority: Medium.</p>
+      <p>Purpose: Allows a patient to cancel a booked appointment.</p>
+      <p>Overview: This actions lets the user to cancel the appointment they have booked.</p>
+      <p>Cross reference: Check Status.</p>
+      <p><strong>4.5.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Check Status.</p>
+        <p>2. User selects cancel appointments.</p>
+        <p>4. User confirms his action.</p>
+        <p>6. User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System asks for confirmation.</p>
+        <p>5. System cancels that appointment.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-3: No appointments made. System displays “No appointments made” message.</p>
+      <p><strong>4.5.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection. </p>
+      <br>
+      <h3 id = "L4.6" class="subtitle">4.6  View Prescription</h3>
+      <p><strong>4.6.1  Description and Priority</strong></p>
+      <p>Name: View Prescription.</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Patient.</p>
+      <p>Priority: Medium.</p>
+      <p>Purpose: Allows a patient to view the prescription.</p>
+      <p>Overview: This actions lets the user to see the prescription the doctor will prescribe to the patient. There will be also the previous prescription if there is any.</p>
+      <p>Cross reference: Log In.</p>
+      <p><strong>4.6.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Log In.</p>
+        <p>2. User selects view reports.</p>
+        <p>4. User chooses a report.</p>
+        <p>6. User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System shows available reports.</p>
+        <p>5. System displays that report.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-3: No reports available. System displays “No reports yet” message.</p>
+      <p><strong>4.6.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection. </p>
+      <p>REQ-2: User must have a pdf/document reader to view the report.</p>
+      <br>
+      <h3 id = "L4.7" class="subtitle">4.7  Send Prescription</h3>
+      <p><strong>4.7.1  Description and Priority</strong></p>
+      <p>Name: Send Prescription.</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Doctor.</p>
+      <p>Priority: Medium.</p>
+      <p>Purpose: Allows the doctor to give prescription to the patient.</p>
+      <p>Overview: This action lets the doctor’s to give prescription to their patients. Doctor chooses a specific patient’s file whose prescription he wants to upload. He then uploads the file with additional information.</p>
+      <p>Cross reference: Log In</p>
+      <p><strong>4.7.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Log In.</p>
+        <p>2. User selects and patient with their serial number..</p>
+        <p>4. User uploads a prescription.</p>
+        <p>6. User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System shows patients file.</p>
+        <p>5. System verifies the file and updates it to the patient’s page with date and time and other information.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-3: Patients serial and prescription serial does not match. System displays “Incorrect file” message.</p>
+      <p><strong>4.7.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection.</p>
+      <br>
+      <h3 id = "L4.8" class="subtitle">4.8  Confirm Booking</h3>
+      <p><strong>4.8.1  Description and Priority</strong></p>
+      <p>Name: Confirm Booking.</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Admin.</p>
+      <p>Priority: High.</p>
+      <p>Purpose: Allows the user to confirm booking request.</p>
+      <p>Overview: User can view pending booking request and choose to confirm them.</p>
+      <p>Cross reference: Log In</p>
+      <p><strong>4.8.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Log In.</p>
+        <p>2. User selects view pending request. </p>
+        <p>4. User selects either confirm button next to request.</p>
+        <p>6. User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System shows patients’ request list.</p>
+        <p>5. System verifies and updates the database.</p>
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-3: No request available. System displays “No request” message.</p>
+      <p>Line-5: No empty slot left. System displays “No seats available” message.</p>
+      <p><strong>4.8.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection.</p>
+
+      <h3 id = "L4.9" class="subtitle">4.9  Confirm Booking</h3>
+      <p><strong>4.9.1  Description and Priority</strong></p>
+      <p>Name:Change Booking.</p>
+      <p>Type: Primary.</p>
+      <p>Actor: Doctor, Admin.</p>
+      <p>Priority: High.</p>
+      <p>Purpose: Allows the user to change schedule of Booking.</p>
+      <p>Overview: User can change booking serials, timing for personal/emergency reason.</p>
+      <p>Cross reference: Log In</p>
+      <p><strong>4.9.2  Stimulus/Response Sequences</strong></p>
+      <p><b>Typical course of events:</b></p>
+      <div class="row">
+        <div class="column">
+        <h2 style="text-align: center;">Actor Action</h2>
+        <p>1. Includes Log In.</p>
+        <p>2. User selects view appointments. </p>
+        <p>4. User selects an appointment.</p>
+        <p>6. User can changes date/time and serial number by editing and states the reason for change.</p>
+        <p>8. User confirms his action.</p>
+        <p>10 User Logs out.</p>
+        </div>
+        <div class="column">
+        <h2 style="text-align: center;">System Response</h2>
+        <p>3. System shows patients list.</p>
+        <p>5. System displays details with edit options.</p>
+        <p>7. System asks for confirmation.</p>
+        <p>9. System updates the information as well as respective appointments.</p>
+
+        </div>
+      </div>
+      <p><b>Alternative:</b></p>
+      <p>Line-3: No patients available. System displays “No appointments” message.</p>
+      <p><strong>4.9.3  Functional Requirements</strong></p>
+      <p>REQ-1: Internet connection. If not connected the app will ask the user to set up a connection.</p>
+      <p>REQ-2: A doctor can only changes his appointments.</p>
+      <p>REQ-3: Serial number can be changed only in case of emergency appointments. </p>
+      <br>
+
+      <h2 id = "L5" class="title">5.  Other Nonfunctional Requirements</h2>
+      <h3 id = "L5.1" class="subtitle">5.1  Performance Requirements</h3>
+      <ul>
+        <li>Search features should be prominent and user friendly to use. The search results displayed in the list should be up to date and easy to understand.</li>
+        <li>View Serial Status should show the status in real time.</li>
+        <li>If the system loses the connection to the Internet, the user should be informed about any changes as soon as he gets back online.</li>
+      </ul>
+      <h3 id = "L5.2" class="subtitle">5.2  Safety Requirements</h3>
+      <p>In any case of extensive damage to a wide portion of the database due to catastrophic failure, such as a disk crash, the recovery method restores a past copy of the database that was backed up to archival storage and then reconstructs a current state by collecting data from the backed up log, up to the time of failure.</p>
+      <h3 id = "L5.3" class="subtitle">5.3  Security Requirements</h3>
+      <p>The security of the communication between the system and server will be maintained carefully. Separate user name and mobile number should be needed for a user to create a new id.</p>
+      <h3 id = "L5.4" class="subtitle">5.4  Software Quality Attributes</h3>
+      <ul>
+        <li><b>Availability:</b> The patients book ticket 24/7 by the app. Doctors should be available on the promised time</li>
+        <li><b>Maintainability:</b> The system will maintain and ensure proper services for the patients.</li>
+      </ul>
+      <h3 id = "L5.5" class="subtitle">5.4  Business Rules</h3>
+      <p>There should be an emergency and a non-emergency case for the patients. It will ensure priority base health service. The hospital authority may still book serials manually for those who don’t have any technological devices.</p>
+
+      <h2 id = "L6" class="title">6.  Other Requirements</h2>
+      <p>Not applicable.</p>
+    </section>
+    </div>
+  </div>
+
+<script>
+function searchBtn() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("searchbar");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("contents");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+function printDiv() {
+     var print = document.getElementById("print").innerHTML;
+     var original = document.body.innerHTML;
+
+     document.body.innerHTML = print;
+
+     window.print();
+
+     document.body.innerHTML = original;
+}
+
+window.onscroll = function() {stickyBar()};
+var navbar = document.getElementById("fixed");
+var sticky = navbar.offsetTop;
+
+function stickyBar() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>

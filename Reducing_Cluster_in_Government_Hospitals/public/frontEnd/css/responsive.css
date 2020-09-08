@@ -1,0 +1,376 @@
+/* 23. Responsive Styles 
+------------------------------------- */
+@media only screen and (max-width: 1920px) {
+
+}
+@media only screen and (max-width: 1400px){
+	
+}
+@media only screen and (max-width: 991px) {
+	
+
+	/* -- Style Custom -- */
+	.top-left{
+		text-align: center;
+	}
+	.top-right {
+		text-align: center;
+		float: none;
+		display: inline-grid;
+		margin-top: 15px;
+	}
+	.top_search {
+		text-align: right;
+		position: relative;
+		width: 100%;
+	}
+	.top_search .search {
+		width: 100%;
+	}
+	.top_social {
+		width: 100%;
+		margin-top: 10px;
+	}
+	.top-contact{
+	}
+	.icon-box, .icon-box::before, .icon-box::after {
+		width: 40px;
+		height: 23px;
+	}
+	.icon-box i {
+		font-size: 21px;
+		left: 8px;
+		top: 1px;
+	}
+	.top-contact {
+		float: inherit;
+		margin-left: 16px;
+	}
+	.contact-dts {
+		margin-top: 10px;
+	}
+	.appoinment a {
+		text-transform: uppercase;
+		color: #ffffff;
+		font-size: 20px;
+		text-decoration: none;
+		background: #14b5f8;
+		padding: 10px 30px;
+		margin-left: 35%;
+		line-height: 60px;
+		text-align: center;
+	}
+	.mainmenu .slicknav_menu {
+	    display: inherit;
+	}
+	.menu ul.navigation {
+	    display: none;
+	}
+	.dropdown-menu {
+		width: 35%;
+	}
+	.appoinment-from .appoinment_group select {
+		margin-bottom: 20px;
+	}
+	.single-slider{
+		position:relative;
+		height: 450px;
+	}
+	.slider-content{
+		margin-top: 30px;
+	}
+	.slider-content h2 {
+		margin-top: 30px;
+	}
+	.slider-active .owl-dots {
+		bottom: 25px;
+		left: 15%;
+		margin-left: -10px;
+	}
+	.welcome_header{
+		text-align: center;
+	}
+	.welcome_header h2::before {
+		margin-left: -96px;
+	}
+	.welcome_header h2::after {
+		margin-left: -20px;
+	}
+	.welcome_header p {
+		margin: 0px auto;
+	}
+	.welcome_thumbnail img{
+		margin-left: 25%;
+	}
+	.single_item{
+		width: 320px;
+	}
+	.department_box h4{
+		font-size: 15px;
+	}
+	.department_box img {
+		width: 50px;
+		height: 50px;
+	}
+	.doctor_slider_active .owl-stage-outer {
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	.appoinment-from .appoinment_group .select_box::after {
+		bottom: 43%;
+	}
+	.profile_details{
+		margin-top: 50px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	body {
+		text-align:inherit;
+	}
+	
+	/* -- Style Custom -- */
+	.slider-active .owl-dots {
+		bottom: 25px;
+		left: 5%;
+	}
+	.doctor_slider_active .owl-nav .owl-prev {
+		left: -15px;
+	}
+	.doctor_slider_active .owl-nav .owl-next {
+		right: -15px;
+	}
+	
+}
+@media only screen and (max-width:767px) {
+	body {
+		text-align:inherit;
+
+	}
+	.container{
+		width:80%;
+		margin:0px auto;
+	}
+	
+	
+	/* -- Style Custom -- */
+	
+}
+	
+@media only screen and (max-width: 480px) {
+	body {
+		text-align:inherit;
+	}
+	h1 {
+		font-size: 45px;
+	}
+	h2 {
+		font-size: 25px;
+	}
+	h3 {
+		font-size: 15px;
+	}
+	.top_search .search {
+		width: 100%;
+	}
+	.mainmenu .slicknav_nav {
+		top: 115%;
+		width: 400%;
+	}
+	.single-slider{
+		position:relative;
+		height: 200px;
+	}
+	.slider-content{
+		margin-top: 10px;
+	}
+	.slider-content h2{
+		font-size:20px;
+		margin-bottom:10px;
+		line-height:20px;
+		margin-top: 50px;
+	}
+	.slider-content h3{
+		color: #ffffff;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	.slider-content p{
+		display: none !important;
+	}
+	.slider_thumnail{
+		display: none;
+	}
+	.slider-content .btn-book,
+	.slider-content .btn-learn{
+		display: none!important;
+	}
+	.welcome_thumbnail img{
+		margin-left: 0%;
+	}
+	.welcome_header p {
+		width: 100%;
+	}
+	.gallery_header p{
+		width: 100%;
+	}
+	.gallery_filter ul li{
+		margin-top: 10px;
+	}
+	.single_item{
+		width: 250px;
+	}
+	.gallery_box .icon li{ 
+		position: relative;
+		left: 25%;
+	}
+	.gallery_box .box-content {
+		padding: 25px;
+	}
+	.gallery_box p {
+		margin-top: 30px;
+	}
+	.gallery_box h3 {
+		margin-top: 10px;
+	}
+	.department_section{
+		height: auto;
+	}
+	.department_header p{
+		width: 100%;
+	}
+	.department_box {
+		margin-top: 30px;
+	}
+	.department_box img {
+		width: 25px;
+		height: 25px;
+	}
+	.department_box h4{
+		font-size: 10px;
+	}
+	.doctor_slider_active .owl-stage-outer {
+		margin-left: 5px;
+		margin-right: 0px;
+	}
+	.doctor_slider_active .owl-nav .owl-next {
+		right: -55px;
+	}
+	.doctor_slider_active .owl-nav .owl-prev {
+		left: -50px;
+	}
+	.appoinment_header p{
+		width: 100%;
+	}
+	.dropdown-menu {
+		width: 72%;
+	}
+	.banner-section {
+		height: auto !important;
+	}
+	.banner_header ul {
+		margin-top: 42px;
+	}
+	.banner_header p{
+		width: 100%;
+	}
+	.blog_box {
+		width: 100%;
+	}
+	.blog_box .blog_thumbnail img {
+		height: 100px;
+	}
+	.blog_box .blog_content h3 {
+		font-size: 20px;
+	}
+	.pagination > li:nth-child(4),
+	.pagination > li:nth-child(5),
+	.pagination > li:nth-child(6) {
+		display: none;
+	}
+	.post_box {
+		width: 300px;
+	}
+	.post_box .post_meta ul li:last-child {
+		float: inherit;
+		margin-left: 20px;
+	}
+	.single_page_nav ul li {
+		margin-right: 10px;
+	}
+	.comment_warp:nth-child(odd){
+	    margin-left: 0px;
+	}
+	.doctor_profile {
+		width: 100%;
+	}
+	.profile_thumbnail img {
+		width: 100%;
+		height: auto;
+	}
+	.details_part .details_header, .details_part .details_content {
+		display: inherit;
+	}
+	.details_part .details_header h4 {
+		margin-bottom: 20px;
+	}
+	.details_part .details_content ul li {
+		margin-left: 25px;
+	}
+	.contact_header p{
+		width: 100%;
+	}
+	.about_thumbnail {
+		width: 100%;
+	}
+	.doctor_header p {
+		width: 100%;
+	}
+	.blog_item {
+		display: inherit;
+	}
+	.blog_item .blog_date {
+		margin-right: 0px;
+		margin-bottom: 15px;
+	}
+	.call_left_side{
+		margin-bottom: 40px;
+	}
+	.call_left_side:before{
+		display: none;
+	}
+	.test_list_section ul li {
+		font-size: 15px;
+	}
+	.test_list_section ul li span {
+		padding: 10px 20px;
+	}
+}
+@media only screen and (max-width: 360px) {
+	body {
+		text-align:inherit;
+	}
+	/* -- Style Custom -- */
+	.doctor-box {
+		width: 100%;
+	}
+	.doctor_slider_active .owl-nav .owl-prev {
+		left: -45px;
+	}
+	.doctor_slider_active .owl-nav .owl-next {
+		right: -54px;
+	}
+}
+@media only screen and (max-width: 320px) {
+	body {
+		text-align:inherit;
+	}
+		
+	/* -- Style Custom -- */
+	.test_list_section ul li {
+		font-size: 12px;
+	}
+	.test_list_section ul li span {
+		padding: 10px 17px;
+	}
+}
